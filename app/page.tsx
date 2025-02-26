@@ -1,101 +1,150 @@
-import Image from "next/image";
+import AgentPulse from "@/components/AgentPulse";
+import YoutubeVideoForm from "@/components/YoutubeVideoForm";
+
+import { Brain, MessageSquare, Image as ImageIcon, Sparkles, Video } from "lucide-react";
+
+const steps = [
+  {
+    title: "1. Connect Your Content",
+    description: "Share your YouTube video URL and let your agent get to work.",
+    icon: Video
+  },
+  {
+    title: "2. AI Agent Analysis",
+    description: "Your personal agent analyzes every aspect of your content.",
+    icon: Brain
+  },
+  {
+    title: "3. Recieve Intelligence",
+    description: "Get actionable insights and strategic recommendations",
+    icon: MessageSquare
+  },
+]
+
+const features = [
+  {
+    title: "AI Analysis",
+    description: "Get deep insights into your video content with our advanced AI analysis. Understand viewer engagement and content quality.",
+    icon: Brain,
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-600"
+  },
+  {
+    title: "Smart Transcription",
+    description: "Get accurate transcriptions of your videos. perfect for creating subtitles, blog posts, or repurposing content.",
+    icon: MessageSquare,
+    iconBg: "bg-green-100",
+    iconColor: "text-green-600"
+  },
+  {
+    title: "Thumbnail Generation",
+    description: "Generate eye-catching thumbnails using AI. Boost your click-through rates with compelling visuals.",
+    icon: ImageIcon,
+    iconBg: "bg-purple-100",
+    iconColor: "text-purple-600"
+  },
+  {
+    title: "Title Generation",
+    description: "Create attention-grabbing, SEO-optimized titles for your videos using AI. Maximize views with titles that resonate with your audience.",
+    icon: MessageSquare,
+    iconBg: "bg-yellow-100",
+    iconColor: "text-yellow-600"
+  },
+  {
+    title: "Shot Script",
+    description: "Get detailed, step-by-step instructions to recreate viral videos. Learn shooting techniques, angles, and editing tips from successful content.",
+    icon: Video,
+    iconBg: "bg-red-100",
+    iconColor: "text-red-600"
+  },
+  {
+    title: "Discuss with Your AI Agent",
+    description: "Engage in deep conversations about your content strategy, brainstorm ideas, and unlock new creative possibilities with your AI agent companion.",
+    icon: Sparkles,
+    iconBg: "bg-orange-100",
+    iconColor: "text-orange-600"
+  },
+
+]
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen">
+         {/* Hero Section */}
+         <section className="py-20 bg-gradient-to-b from-white to-gray-50"> 
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col items-center gap-10 text-center mb-12 justify-center">
+              <AgentPulse size="large" color="blue"/>
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Meet Your Personal{" "} <span className="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">AI Content Agent</span></h1>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Transform your video content with AI-powered analysis, transcription and insights. Get Started in seconds.
+              </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+              {/* YoutubeVideoForm */}
+              <YoutubeVideoForm />
+
+            </div>
+          </div>
+         </section>
+
+         {/* Features Section */}
+
+         <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Powerful Features for Content Creators</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Features */}
+              {features.map(({icon, title, description, iconBg, iconColor}) => {
+                const Icon = icon;
+                return (
+                  <div key={title} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-500 transition-all duration-300">
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${iconBg}`}>
+                        <Icon className={`w-6 h-6 ${iconColor}`}/>
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                    <p className="text-gray-600">{description}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+         </section>
+
+         {/* How it works Section */}
+
+         <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Meet Your AI Agent In 3 Simple Steps </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {steps.map(({title, description, icon}) => {
+                const Icon = icon;
+                return (
+                  <div key={title} className="text-center p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition-all">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-8 h-8 text-white"/>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                    <p className="text-gray-600">{description}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+         </section>
+
+         {/* Footer Section */}
+
+         <footer className="py-20 px-4 md:px-0 bg-gradient-to-r from-blue-600 to-blue-400">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Read to Meet Your AI Content Agent?
+            </h2>
+            <p className="text-xl text-blue-50">
+              Join creators leveraging AI to unlock content insights
+            </p>
+          </div>
+         </footer>
+
     </div>
   );
 }
